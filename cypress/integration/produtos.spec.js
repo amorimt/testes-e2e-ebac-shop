@@ -6,18 +6,18 @@ describe('Funcionalidade página de produtos', () => {
         cy.visit('produtos')
     });
   
-    it('Deve selecionar um produto da lista', () => {
-        cy.get(':nth-child(2) > .page-numbers').click()
-        cy.get('[class= "product-block grid"]')
-            //.first()
-            //.last()
-            //.eq(3)
-            .contains('Bruno Compete Hoodie')
-            .click()
-    });
+    // it('Deve selecionar um produto da lista', () => {
+    //     cy.get(':nth-child(2) > .page-numbers').click()
+    //     cy.get('[class= "product-block grid"]')
+    //         //.first()
+    //         //.last()
+    //         //.eq(3)
+    //         .contains('Bruno Compete Hoodie')
+    //         .click()
+    // });
   
     it('Deve adicionar um produto ao carrinho', () => {
-        var quantidade = 2
+        var quantidade = 4
         cy.get(':nth-child(2) > .page-numbers').click()
         cy.get('[class= "product-block grid"]')
             .contains('Bruno Compete Hoodie').click()

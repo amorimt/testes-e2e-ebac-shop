@@ -32,7 +32,6 @@ class EnderecoPage {
         cy.get('#select2-shipping_state-container').click().type(estado).get('[aria-hidden="false"]').click()
         cy.get('#shipping_postcode').clear().type(cep)
         cy.get(':nth-child(2) > .button').click()
-
     }
 }
 
