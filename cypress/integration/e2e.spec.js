@@ -12,37 +12,20 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         Adicionando ao carrinho
         Preenchendo todas opções no checkout
         E validando minha compra ao final */
-
-    describe('Teste de funcionalidade E2e', () => {
+        
         beforeEach(() => {
             cy.visit('minha-conta')
         });
-
-        it('Deve fazer login com sucesso', () => {
+        it('Fazer login e realizar compra', () => {
             cy.fixture('perfil').then((dados) => {
                 cy.login(dados.usuario, dados.senha)
             })
             cy.get('.page-title').should('contain', 'Minha conta')
-        });
-
-        it('Deve completar pré cadastro com sucesso', () => {
-            cy.preCadastro(faker.internet.email(), 'senha@forte!', 'Vanessa', 'Pereira')
-            cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso')
-        });
-
-        it('Deve fazer cadastro de faturamento com sucesso', () => {
-            EnderecoPage.editarEnderecoFaturamento('Tamiris', 'Ferreira', 'Google', 'Brasil', 'Rua dois', '03', 'São Paulo', 'São Paulo', '08555471', '77777888', 'email@dominio.com')
-            cy.get('.woocommerce-message').should('contain', 'Endereço alterado com sucesso.')
-        });
-
-        beforeEach(() => {
             cy.visit('produtos')
-        });
-
-        it('Deve adicionar produtos no carrinho com sucesso', () => {
             let quantidade = 4
-            cy.addProdutos('Cassia Funnel Sweatshirt', 'M', 'White', 4)
-            cy.get('.woocommerce-message').should('contain', quantidade + ' × “Cassia Funnel Sweatshirt” foram adicionados no seu carrinho.')
+            cy.addProdutos('Ajax Full-Zip Sweatshirt', 'M', 'Green', 4)
+            cy.get('.woocommerce-message').should('contain', quantidade + ' × “Ajax Full-Zip Sweatshirt” foram adicionados no seu carrinho.')
         });
     });
-})
+
+

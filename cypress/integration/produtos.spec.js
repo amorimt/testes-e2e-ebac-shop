@@ -18,11 +18,11 @@ describe('Funcionalidade página de produtos', () => {
   
     it('Deve adicionar um produto ao carrinho', () => {
         var quantidade = 4
-        cy.get(':nth-child(2) > .page-numbers').click()
+        cy.get(':nth-child(1) > .page-numbers').click()
         cy.get('[class= "product-block grid"]')
-            .contains('Bruno Compete Hoodie').click()
+            .contains('Ajax Full-Zip Sweatshirt').click()
         cy.get('.button-variable-item-M').click()
-        cy.get('.button-variable-item-Black').click()
+        cy.get('.button-variable-item-Green').click()
         cy.get('.input-text').clear().type(quantidade)
         cy.get('.single_add_to_cart_button').click()
   
@@ -32,12 +32,12 @@ describe('Funcionalidade página de produtos', () => {
     });
   
     it('Deve adicionar produtos no carrinho usando Comandos customizados', () => {
-        cy.addProdutos('Cassia Funnel Sweatshirt', 'M', 'White', 4)
+        cy.addProdutos('Ajax Full-Zip Sweatshirt', 'M', 'Green', 4)
         
     });
   
-    it('Deve adicionar produtos no carrinho usando Comandos customizados', () => {
-        cy.addProdutos('Autumn Pullie', 'XS', 'Red', 4)
+    // it('Deve adicionar produtos no carrinho usando Comandos customizados', () => {
+    //     cy.addProdutos('Autumn Pullie', 'XS', 'Red', 4)
   
-    });
+    // });
  });
