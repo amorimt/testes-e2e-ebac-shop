@@ -20,7 +20,7 @@ describe('Funcionalidade página de produtos', () => {
         var quantidade = 4
         cy.get(':nth-child(1) > .page-numbers').click()
         cy.get('[class= "product-block grid"]')
-            .contains('Ajax Full-Zip Sweatshirt').click()
+            .contains('[1870294] Produto Lgc2').click()
         cy.get('.button-variable-item-M').click()
         cy.get('.button-variable-item-Green').click()
         cy.get('.input-text').clear().type(quantidade)
